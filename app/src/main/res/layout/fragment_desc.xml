@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".descFragment">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:id="@+id/mainbanner"
+        android:src="@mipmap/ic_launcher"
+        android:scaleType="fitXY"/>
+
+    <TextView
+        android:id="@+id/desctext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:layout_below="@+id/mainbanner"
+        android:text="RESTO NAME"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/blackone"
+        android:textSize="20sp"
+        android:layout_marginLeft="10dp"
+        />
+    <TextView
+        android:id="@+id/typestext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:layout_below="@+id/desctext"
+        android:text="Types"
+        android:textSize="13sp"
+        android:textColor="#A59797"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="12dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="278dp"
+        android:layout_marginBottom="-12dp"
+        android:background="@drawable/roundbutton"
+        android:text="Rate It"
+        android:textColor="#fff"
+        android:layout_below="@id/mainbanner"
+        android:layout_marginTop="13dp"
+        android:layout_marginRight="20dp"
+        android:elevation="10dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/menutitle"
+        android:layout_below="@id/typestext"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="12dp"
+        android:text="Menu"
+        android:fontFamily="@font/open_sans_bold"
+        android:textColor="@color/blackone"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:id="@+id/recmenu"
+        android:layout_below="@id/menutitle"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="8dp"
+    app:cardCornerRadius="10dp"
+    app:cardUseCompatPadding="true"
+    android:id="@+id/menurowid"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/menuname"
+            android:layout_width="294dp"
+            android:layout_height="41dp"
+            android:layout_marginLeft="5dp"
+            android:fontFamily="@font/open_sans_bold"
+            android:text="Name"
+            android:textColor="@color/blackone"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/menuprice"
+            android:layout_width="85dp"
+            android:layout_height="32dp"
+            android:layout_below="@id/menuname"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/open_sans_bold"
+            android:text="price"
+            android:textColor="@color/blackone"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
