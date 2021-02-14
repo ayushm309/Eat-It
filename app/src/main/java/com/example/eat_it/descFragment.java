@@ -34,6 +34,7 @@ public class descFragment extends Fragment {
     RecyclerView recmenu;
     menuAdapterclass adapterclass;
 
+
     public descFragment() {
 
     }
@@ -84,7 +85,8 @@ public class descFragment extends Fragment {
         recmenu.setLayoutManager(new LinearLayoutManager(getContext()));
         FirebaseRecyclerOptions<menumodel> options =
                 new FirebaseRecyclerOptions.Builder<menumodel>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("category"), menumodel.class)
+//                        .setQuery(FirebaseDatabase.getInstance().getReference().child("category"), menumodel.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("category").child("1").child("menu"), menumodel.class)
                         .build();
         adapterclass= new menuAdapterclass(options);
         recmenu.setAdapter(adapterclass);

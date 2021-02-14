@@ -60,9 +60,9 @@
         android:textColor="@color/blackone"/>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="match_parent"
         android:id="@+id/recmenu"
-        android:layout_below="@id/menutitle"/>
+        android:layout_below="@id/menutitle" />
 
 
 </RelativeLayout>

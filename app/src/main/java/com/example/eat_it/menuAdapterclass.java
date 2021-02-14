@@ -21,7 +21,7 @@ public class menuAdapterclass extends FirebaseRecyclerAdapter<menumodel, menuAda
     @Override
     protected void onBindViewHolder(@NonNull myviewholder2 holder, int position, @NonNull menumodel model) {
         holder.menuname.setText(model.getMname());
-        holder.menuprice.setText(model.getPrice());
+        holder.menuprice.setText("Rs " + model.getPrice());
 
 
     }
