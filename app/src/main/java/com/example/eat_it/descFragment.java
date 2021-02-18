@@ -1,5 +1,6 @@
 package com.example.eat_it;
 
+import android.app.Dialog;
 import android.os.Bundle;
 
 import androidx.activity.OnBackPressedCallback;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -73,6 +75,8 @@ public class descFragment extends Fragment {
         ImageView mainbanner = view.findViewById(R.id.mainbanner);
        TextView desctext = view.findViewById(R.id.desctext);
         TextView typestext = view.findViewById(R.id.typestext);
+
+
 
 
         Glide.with(getContext()).load(purl).into(mainbanner);

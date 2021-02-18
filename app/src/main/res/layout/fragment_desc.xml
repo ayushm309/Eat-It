@@ -57,11 +57,13 @@
         android:layout_marginLeft="12dp"
         android:text="Menu"
         android:fontFamily="@font/open_sans_bold"
-        android:textColor="@color/blackone"/>
+        android:textColor="@color/blackone" />
+
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:id="@+id/recmenu"
+        android:layout_width="match_parent"
+        android:layout_height="288dp"
+        android:layout_above="@+id/chipBar"
         android:layout_below="@id/menutitle" />
 
 
