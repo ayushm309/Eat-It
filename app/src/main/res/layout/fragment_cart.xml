@@ -1,14 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CartFragment">
-
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/carttext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/open_sans_bold"
+        android:text="Cart"
+        android:textColor="@color/blackone"
+        android:textSize="22sp"
+         />
 
-</FrameLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cartrecy"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@id/carttext"
+        android:layout_marginTop="15dp" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/cardcart"
+        android:layout_below="@id/cartrecy"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/cardbackground">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/cardtotal"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:text="Total Price ="
+                android:textColor="@color/blackone"
+                android:fontFamily="@font/open_sans_bold"
+                android:textSize="20sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/cardpricetext"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="50dp"
+                android:text="Rs  0"
+                android:textColor="@color/blackone"
+                android:fontFamily="@font/open_sans_bold"
+                android:textSize="20sp"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/paymentbutton"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="20dp"
+                android:text="Proceed to Pay"
+                android:textColor="#fff"
+                android:textSize="15sp"
+                android:fontFamily="@font/open_sans_bold"
+                android:background="@drawable/roundbutton"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+</RelativeLayout>

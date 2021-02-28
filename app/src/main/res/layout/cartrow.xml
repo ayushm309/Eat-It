@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="8dp"
+    app:cardCornerRadius="10dp"
+    app:cardUseCompatPadding="true"
+    android:id="@+id/cartrow"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/cartmenuname"
+            android:layout_width="280dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/open_sans_bold"
+            android:text="Name"
+            android:textColor="@color/blackone"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/cartmenuprice"
+            android:layout_width="85dp"
+            android:layout_height="32dp"
+            android:layout_toRightOf="@id/cartmenuname"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/open_sans_bold"
+            android:text="price"
+            android:textColor="@color/blackone"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/cartQuantity"
+            android:layout_width="85dp"
+            android:layout_height="32dp"
+            android:layout_below="@id/cartmenuname"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/open_sans_bold"
+            android:text="Quantity"
+            android:textColor="@color/blackone"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/quantitynum"
+            android:layout_width="85dp"
+            android:layout_height="32dp"
+            android:layout_below="@id/cartmenuprice"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/open_sans_bold"
+            android:text="0"
+            android:textColor="@color/blackone"
+            android:textSize="15sp" />
+
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

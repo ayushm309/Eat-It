@@ -15,6 +15,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,6 +28,8 @@ public class LoginActivity extends AppCompatActivity {
     Button callSignUp;
     Button mainPageButton;
     EditText username, password;
+    private  FirebaseAuth mauth;
+
 
 
     @Override
@@ -38,6 +42,8 @@ public class LoginActivity extends AppCompatActivity {
         mainPageButton = findViewById(R.id.login_button);
         username = findViewById(R.id.email);
         password = findViewById(R.id.password);
+        mauth= FirebaseAuth.getInstance();
+
 
 
 
@@ -66,6 +72,7 @@ public class LoginActivity extends AppCompatActivity {
                 final String passwordData = password.getText().toString().trim();
 
                 DatabaseReference reference= FirebaseDatabase.getInstance().getReference("users");
+
                 Query checkUser= reference.orderByChild("rUsername").equalTo(userNamedata);
                 checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -81,6 +88,10 @@ public class LoginActivity extends AppCompatActivity {
                                 String usernameFromdb = snapshot.child(userNamedata).child("rUsername").getValue(String.class);
                                 String emailFromdb = snapshot.child(userNamedata).child("rEmail").getValue(String.class);
                                 String phoneFromdb = snapshot.child(userNamedata).child("rPhoneno").getValue(String.class);
+
+                                Prevalent.currentOnlineUser=userNamedata;
+
+
 
                                 Intent intent=new Intent(getApplicationContext(),SearchActivity.class);
                                 Bundle bundle= new Bundle();
@@ -163,12 +174,12 @@ public class LoginActivity extends AppCompatActivity {
 
     };
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+       FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
-
-
-
-
-
+    }
 }
 
 
