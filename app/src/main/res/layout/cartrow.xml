@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="80dp"
+    android:layout_height="130dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:elevation="8dp"
+    android:elevation="15dp"
     app:cardCornerRadius="10dp"
     app:cardUseCompatPadding="true"
     android:id="@+id/cartrow"
@@ -47,18 +47,28 @@
             android:text="Quantity"
             android:textColor="@color/blackone"
             android:textSize="15sp" />
+
         <TextView
             android:id="@+id/quantitynum"
-            android:layout_width="85dp"
-            android:layout_height="32dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/cartmenuprice"
             android:layout_alignParentRight="true"
-            android:layout_marginLeft="14dp"
+            android:layout_marginRight="15dp"
             android:layout_marginTop="5dp"
             android:fontFamily="@font/open_sans_bold"
             android:text="0"
             android:textColor="@color/blackone"
             android:textSize="15sp" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icdelete"
+            android:background="#fff"
+            android:id="@+id/deletebtn"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="182dp"
+            android:layout_marginBottom="10dp" />
 
 
 

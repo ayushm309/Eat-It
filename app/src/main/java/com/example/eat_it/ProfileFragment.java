@@ -46,7 +46,7 @@ public class ProfileFragment extends Fragment {
         phoneno = view.findViewById(R.id.phonenotext);
 
 
-        // showUserData();
+         //showUserData();
         return view;
 
 
@@ -57,7 +57,7 @@ public class ProfileFragment extends Fragment {
 
          Bundle bundle = this.getArguments();
          if (bundle != null) {
-             String nameFromDb = bundle.getString("fname","fname");
+             String nameFromDb = bundle.getString("fname");
              String usernameFromDb = bundle.getString("rUsername");
              String emailFromDb = bundle.getString("rEmail");
              String phoneFromDb = bundle.getString("rPhoneno");

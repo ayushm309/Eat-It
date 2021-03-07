@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
@@ -17,6 +18,8 @@ import com.google.firebase.database.FirebaseDatabase;
 public class CartFragment extends Fragment {
     RecyclerView cartrec;
     cartadapterclass cartadapterclass;
+    TextView totalcarttext;
+    String totalprice = "";
 
     public CartFragment() {
     }
@@ -26,6 +29,10 @@ public class CartFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_cart, container, false);
+
+        totalcarttext=view.findViewById(R.id.cardpricetext);
+
+
         cartrec=(RecyclerView)view.findViewById(R.id.cartrecy);
         cartrec.setLayoutManager(new LinearLayoutManager(getContext()));
         FirebaseRecyclerOptions<cartmodel> options =
@@ -38,6 +45,13 @@ public class CartFragment extends Fragment {
         cartadapterclass= new cartadapterclass(options);
         cartrec.setAdapter(cartadapterclass);
         cartadapterclass.startListening();
+        Bundle bundle=getArguments();
+        if (bundle!=null) {
+            totalprice = bundle.getString("TP");
+        }
+        totalcarttext.setText(totalprice);
+
+
         return view;
     }
 

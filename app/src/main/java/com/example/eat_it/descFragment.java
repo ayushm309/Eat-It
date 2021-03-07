@@ -12,12 +12,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.gms.common.internal.Objects;
 import com.google.firebase.database.FirebaseDatabase;
 
 import org.w3c.dom.Text;
@@ -35,6 +38,8 @@ public class descFragment extends Fragment {
     String name, purl, types;
     RecyclerView recmenu;
     menuAdapterclass adapterclass;
+    Button rateIt;
+    Dialog dialog;
 
 
     public descFragment() {
@@ -75,6 +80,21 @@ public class descFragment extends Fragment {
         ImageView mainbanner = view.findViewById(R.id.mainbanner);
        TextView desctext = view.findViewById(R.id.desctext);
         TextView typestext = view.findViewById(R.id.typestext);
+        rateIt=view.findViewById(R.id.Rateit);
+        //Dialog = new Dialog((AppCompatActivity)getContext());
+        dialog = new Dialog(view.getContext());
+        dialog.setContentView(R.layout.dialoag_rateit);
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.setCancelable(false);
+        dialog.getWindow().getAttributes().windowAnimations = R.style.animation;
+        Button done = dialog.findViewById(R.id.donebtn);
+        done.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(view.getContext(), "Thank You For Rating", Toast.LENGTH_LONG).show();
+                dialog.dismiss();
+            }
+        });
 
 
 
@@ -94,6 +114,13 @@ public class descFragment extends Fragment {
                         .build();
         adapterclass= new menuAdapterclass(options);
         recmenu.setAdapter(adapterclass);
+
+        rateIt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.show();
+            }
+        });
 
 
 

@@ -2,6 +2,8 @@ package com.example.eat_it;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
@@ -32,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +46,8 @@ public class LoginActivity extends AppCompatActivity {
         username = findViewById(R.id.email);
         password = findViewById(R.id.password);
         mauth= FirebaseAuth.getInstance();
+
+
 
 
 
@@ -95,12 +100,13 @@ public class LoginActivity extends AppCompatActivity {
 
                                 Intent intent=new Intent(getApplicationContext(),SearchActivity.class);
                                 Bundle bundle= new Bundle();
-                                bundle.putString(nameFromdb,"fname");
-                                bundle.putString(usernameFromdb,"rUsername");
-                                bundle.putString(emailFromdb,"rEmail");
-                                bundle.putString(phoneFromdb,"rPhoneno");
-                                ProfileFragment profileFragment= new ProfileFragment();
-                                profileFragment.setArguments(bundle);
+                                bundle.putString("fname",nameFromdb);
+                                bundle.putString("rUsername",usernameFromdb);
+                                bundle.putString("rEmail",emailFromdb);
+                                bundle.putString("rPhoneno",phoneFromdb);
+
+
+
                                 /*intent.putExtra("fname",nameFromdb);
                                 intent.putExtra("rUsername",usernameFromdb);
                                 intent.putExtra("rEmail",emailFromdb);

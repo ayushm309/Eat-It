@@ -45,7 +45,7 @@ public class menuAdapterclass extends FirebaseRecyclerAdapter<menumodel, menuAda
         holder.addtocart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder builder=new AlertDialog.Builder(view.getRootView().getContext());
+                final AlertDialog.Builder builder=new AlertDialog.Builder(view.getRootView().getContext());
                 View dialogcart= LayoutInflater.from(view.getRootView().getContext()).inflate(R.layout.addcartdialog,null);
                 Button addcart;
                 addcart=dialogcart.findViewById(R.id.addcart);
@@ -116,7 +116,7 @@ public class menuAdapterclass extends FirebaseRecyclerAdapter<menumodel, menuAda
                         final HashMap<String, Object> cartMap = new HashMap<>();
                         cartMap.put("mname",proname.getText().toString());
                         cartMap.put("price",proprice.getText().toString());
-                        cartMap.put("Quantity",Integer.parseInt(value.getText().toString()));
+                        cartMap.put("Quantity",value.getText().toString());//Integer.parseInt
                         cartMap.put("date",savecurrentdate );
                         cartMap.put("time",savecurrenttime);
 
@@ -131,8 +131,11 @@ public class menuAdapterclass extends FirebaseRecyclerAdapter<menumodel, menuAda
                                     public void onComplete(@NonNull Task<Void> task) {
                                         Toast.makeText(holder.addtocart.getContext(), "Added to Cart", Toast.LENGTH_SHORT).show();
 
+
+
                                     }
                                 });
+
 
 
                     }

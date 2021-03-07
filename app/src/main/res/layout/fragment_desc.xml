@@ -39,6 +39,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/Rateit"
         android:layout_marginLeft="278dp"
         android:layout_marginBottom="-12dp"
         android:background="@drawable/roundbutton"

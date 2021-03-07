@@ -3,7 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CartFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cartfrag"
+    tools:context=".CartFragment"
+    android:background="#11E91EA5">
     <TextView
         android:id="@+id/carttext"
         android:layout_width="wrap_content"
@@ -19,9 +22,10 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/cartrecy"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="250dp"
         android:layout_below="@id/carttext"
-        android:layout_marginTop="15dp" />
+        android:layout_marginTop="15dp"
+        android:background="#fff"/>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -29,7 +33,10 @@
         android:id="@+id/cardcart"
         android:layout_below="@id/cartrecy"
         android:layout_marginTop="50dp"
-        android:background="@drawable/cardbackground">
+        app:cardCornerRadius="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:elevation="15dp">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -50,7 +57,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="50dp"
-                android:text="Rs  0"
+                android:text="0"
                 android:textColor="@color/blackone"
                 android:fontFamily="@font/open_sans_bold"
                 android:textSize="20sp"/>
