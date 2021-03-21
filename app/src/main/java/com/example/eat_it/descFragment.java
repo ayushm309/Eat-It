@@ -110,7 +110,8 @@ public class descFragment extends Fragment {
         FirebaseRecyclerOptions<menumodel> options =
                 new FirebaseRecyclerOptions.Builder<menumodel>()
 //                        .setQuery(FirebaseDatabase.getInstance().getReference().child("category"), menumodel.class)
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("category").child("1").child("menu"), menumodel.class)
+//                        .setQuery(FirebaseDatabase.getInstance().getReference().child("category").child("1").child("menu"), menumodel.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("MenuList").child(Prevalent.restoname).child("menu"), menumodel.class)
                         .build();
         adapterclass= new menuAdapterclass(options);
         recmenu.setAdapter(adapterclass);

@@ -32,6 +32,7 @@ public class myadapterclass extends FirebaseRecyclerAdapter<homemodel, myadapter
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Prevalent.restoname = model.getName();
                 AppCompatActivity activity= (AppCompatActivity)view.getContext();
                 activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new descFragment(model.getName(),model.getPurl(),model.getTypes())).addToBackStack(null).commit();
 

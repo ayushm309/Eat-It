@@ -25,7 +25,7 @@
 
                 <ImageView
                     android:layout_width="150dp"
-                    android:layout_height="100dp"
+                    android:layout_height="140dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="45dp"
                     android:src="@drawable/dp_copy" />
@@ -39,11 +39,11 @@
                     android:fontFamily="@font/roboto"
                     android:text="Ayush Maurya"
                     android:textColor="#fff"
-                    android:textSize="21sp"
+                    android:textSize="24sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <androidx.cardview.widget.CardView
+            <!--<androidx.cardview.widget.CardView
                 android:layout_width="360dp"
                 android:layout_height="100dp"
                 android:layout_centerHorizontal="true"
@@ -107,7 +107,7 @@
 
                 </LinearLayout>
 
-            </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>-->
         </RelativeLayout>
 
         <LinearLayout
@@ -193,7 +193,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:background="@drawable/roundbutton"
-                android:text="Update"
+                android:text="Log Out"
                 android:textColor="#fff" />
 
 

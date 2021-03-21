@@ -25,7 +25,7 @@
 
 
     <EditText
-        android:id="@+id/search_bar"
+        android:id="@+id/searchbar"
         android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginStart="16dp"
@@ -56,7 +56,7 @@
         android:textColor="@color/blackone"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_bar" />
+        app:layout_constraintTop_toBottomOf="@+id/searchbar" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recview"

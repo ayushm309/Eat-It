@@ -95,10 +95,15 @@ public class LoginActivity extends AppCompatActivity {
                                 String phoneFromdb = snapshot.child(userNamedata).child("rPhoneno").getValue(String.class);
 
                                 Prevalent.currentOnlineUser=userNamedata;
+                                Prevalent.emailId= emailFromdb;
+                                Prevalent.nameId=nameFromdb;
+                                Prevalent.phoneId=phoneFromdb;
+                                Prevalent.passId=passwordFromDb;
 
 
 
-                                Intent intent=new Intent(getApplicationContext(),SearchActivity.class);
+
+                                Intent intent=new Intent(LoginActivity.this,SearchActivity.class);
                                 Bundle bundle= new Bundle();
                                 bundle.putString("fname",nameFromdb);
                                 bundle.putString("rUsername",usernameFromdb);
@@ -107,13 +112,11 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-                                /*intent.putExtra("fname",nameFromdb);
-                                intent.putExtra("rUsername",usernameFromdb);
-                                intent.putExtra("rEmail",emailFromdb);
-                                intent.putExtra("rPhoneno",phoneFromdb);*/
+
 
 
                                 startActivity(intent);
+                                finish();
                             }
                             else {
                                 password.setError("Wrong Password");

@@ -1,7 +1,9 @@
 package com.example.eat_it;
 
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,18 +21,20 @@ public class CartFragment extends Fragment {
     RecyclerView cartrec;
     cartadapterclass cartadapterclass;
     TextView totalcarttext;
-    String totalprice = "";
+
 
     public CartFragment() {
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_cart, container, false);
-
         totalcarttext=view.findViewById(R.id.cardpricetext);
+
+
 
 
         cartrec=(RecyclerView)view.findViewById(R.id.cartrecy);
@@ -45,11 +49,12 @@ public class CartFragment extends Fragment {
         cartadapterclass= new cartadapterclass(options);
         cartrec.setAdapter(cartadapterclass);
         cartadapterclass.startListening();
-        Bundle bundle=getArguments();
+        totalcarttext.setText(Prevalent.totalPrice);
+        /*Bundle bundle=getArguments();
         if (bundle!=null) {
             totalprice = bundle.getString("TP");
-        }
-        totalcarttext.setText(totalprice);
+        }*/
+
 
 
         return view;

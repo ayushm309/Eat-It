@@ -39,19 +39,11 @@ public class cartadapterclass extends FirebaseRecyclerAdapter<cartmodel, cartada
         holder.cartmenuprice.setText(model.getPrice());
         holder.quantitynum.setText(model.getQuantity());
 
-        /*int AllTotalPrice = 0;
+        int AllTotalPrice = 0;
         int Overallprice = ((Integer.parseInt(model.getPrice()))) * ((Integer.parseInt(model.getQuantity())));
         AllTotalPrice= AllTotalPrice + Overallprice ;
-        FragmentManager fm = ((AppCompatActivity)holder.rootview.getContext()).getSupportFragmentManager();
-        FragmentTransaction tm=fm.beginTransaction();
-        CartFragment cartf =  new CartFragment();
 
 
-        Bundle bundle= new Bundle();
-        bundle.putString("TP", String.valueOf(AllTotalPrice));
-        cartf.setArguments(bundle);
-        tm.add(R.id.fragment_container, cartf);
-        tm.commit();*/
 
 
         holder.deletebtn.setOnClickListener(new View.OnClickListener() {

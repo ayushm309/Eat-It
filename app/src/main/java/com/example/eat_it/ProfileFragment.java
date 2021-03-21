@@ -45,6 +45,14 @@ public class ProfileFragment extends Fragment {
         username = view.findViewById(R.id.usernametext);
         phoneno = view.findViewById(R.id.phonenotext);
 
+        fullnametitle.setText(Prevalent.nameId);
+        fullname.getEditText().setText(Prevalent.nameId);
+        email.getEditText().setText(Prevalent.emailId);
+        username.getEditText().setText(Prevalent.currentOnlineUser);
+        phoneno.getEditText().setText(Prevalent.phoneId);
+
+
+
 
          //showUserData();
         return view;
@@ -87,28 +95,5 @@ public class ProfileFragment extends Fragment {
 
 
 
-  /*  protected void onCreateView(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
 
-
-        showAllUserData();
-    }
-
-   /* private void showAllUserData() {
-        Intent intent= getActivity().getIntent();
-        String user_username= intent.getStringExtra("rUsername");
-        String user_email= intent.getStringExtra("rEmail");
-        String user_phoneno= intent.getStringExtra("rPhoneno");
-        String user_fullname= intent.getStringExtra("fname");
-
-        LayoutInflater lf= getActivity().getLayoutInflater();
-
-
-        fullnametitle.setText(user_fullname);
-        fullname.getEditText().setText(user_fullname);
-        email.getEditText().setText(user_email);
-        phoneno.getEditText().setText(user_phoneno);
-        username.getEditText().setText(user_username);
-
-    }*/
 }
